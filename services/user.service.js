@@ -1,6 +1,6 @@
-const boom=require('@hapi/boom');
+const boom = require('@hapi/boom');
 
-getConnection=require('../libs/postgres');
+const getConnection = require('../libs/postgres');
 
 class UserService {
   constructor() {}
@@ -20,13 +20,15 @@ class UserService {
   }
 
   async update(id, changes) {
-    return { id, changes };
+    return {
+      id,
+      changes,
+    };
   }
 
   async delete(id) {
     return { id };
   }
+}
 
- }
-
- module.exports=UserService;
+module.exports = UserService;
